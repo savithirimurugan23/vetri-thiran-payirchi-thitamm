@@ -1,0 +1,14 @@
+Screenshots to be attached in final PPT:
+
+1. Object Manager - Student__c fields screenshot
+2. Course__c records list
+3. Enrollment record with auto-filled fees
+4. Flow - Welcome Email Flow
+5. Trigger Test - Enrollment Success
+6. Report - Course wise count
+7. Dashboard
+
+Demo Video Link: (Add Loom video link if possible pa)
+
+GitHub Repo: savithirimurugan23/vetri-thiran-payirchi-thitamm
+Submitted for Vetri Thiran Payirchi Thittam - Salesforce Admin
