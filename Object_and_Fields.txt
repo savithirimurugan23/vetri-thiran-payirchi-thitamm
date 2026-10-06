@@ -1,0 +1,49 @@
+STUDENT ENROLLMENT & COURSE MANAGEMENT SYSTEM
+Vetri Thiran Payirchi Thittam
+
+=== OBJECT 1: Student__c ===
+Label: Student
+API Name: Student__c
+
+Fields:
+1. Student_Name__c - Text(255) - Required
+2. Email__c - Email - Required, Unique
+3. Phone__c - Phone - Validation: Must be 10 digits
+4. Department__c - Picklist Values: CSE, ECE, IT, MECH, CIVIL
+5. DOB__c - Date
+6. Address__c - Text Area (255)
+
+Validation Rule for Phone:
+AND( LEN(Phone__c) != 10, NOT(ISBLANK(Phone__c)) )
+Error Message: Phone must be 10 digits pa!
+
+=== OBJECT 2: Course__c ===
+Label: Course
+API Name: Course__c
+
+Fields:
+1. Course_Name__c - Text - Ex: Java Programming
+2. Course_Code__c - Text - Unique - Ex: JAVA101
+3. Fees__c - Currency - Ex: 15000
+4. Duration__c - Picklist: 3 Months, 6 Months, 1 Year
+5. Seats_Available__c - Number - Ex: 60
+6. Description__c - Long Text Area
+
+Sample Courses:
+- JAVA101 - Java - Rs.15000 - 60 seats
+- PYT102 - Python - Rs.12000 - 50 seats
+- SF103 - Salesforce Admin - Rs.20000 - 40 seats
+
+=== OBJECT 3: Enrollment__c (Junction Object) ===
+Label: Enrollment
+API Name: Enrollment__c
+
+Fields:
+1. Student__c - Lookup(Student__c) - Required
+2. Course__c - Lookup(Course__c) - Required
+3. Enrollment_Date__c - Date - Default TODAY()
+4. Status__c - Picklist: Enrolled, Completed, Cancelled - Default Enrolled
+5. Fees_Paid__c - Currency - Auto filled by Trigger
+
+Relationship:
+Student (1) -- (M) Enrollment (M) -- (1) Course
